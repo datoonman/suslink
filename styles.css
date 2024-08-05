@@ -1,57 +1,90 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* Basic Reset */
+body, h1, h2, h3, p {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Container */
+body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f7f9;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
 }
 
 .container {
-    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
     background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 90%;
-}
-
-h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.alert {
-    background-color: #ffdddd;
-    border-left: 6px solid #f44336;
-    margin-bottom: 20px;
-    padding: 15px;
     border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+/* Alert Section */
+.alert {
+    background: #e7f0ff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .alert h2 {
-    margin: 0;
-    color: #f44336;
+    margin-bottom: 10px;
+    color: #0056b3;
 }
 
 .alert p {
-    margin: 0;
     font-size: 1.2em;
-    color: #333;
 }
 
-.info h3 {
-    color: #333;
+/* Info Section */
+.info {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-section {
+    margin-bottom: 20px;
+}
+
+.info-section h3 {
     font-size: 1.5em;
+    color: #007BFF;
     margin-bottom: 10px;
 }
 
-.info p {
-    font-size: 1em;
-    color: #555;
-    line-height: 1.5;
-    margin-bottom: 20px;
+.info-section p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .alert, .info {
+        padding: 15px;
+    }
+
+    .info-section h3 {
+        font-size: 1.3em;
+    }
+
+    .info-section p {
+        font-size: 1em;
+    }
 }

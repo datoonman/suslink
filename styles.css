@@ -31,16 +31,17 @@ header h1 {
 
 /* Alert Section */
 .alert {
-    background: #e7f0ff;
+    background: #ffdddd; /* Light red background */
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
     text-align: center;
+    border: 1px solid #ff0000; /* Red border */
 }
 
 .alert h2 {
     margin-bottom: 10px;
-    color: #0056b3;
+    color: #ff0000; /* Darker red for text */
 }
 
 .alert p {

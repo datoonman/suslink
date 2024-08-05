@@ -22,13 +22,14 @@ function updateCounter() {
             body: JSON.stringify({ counter: counter })
         })
         .then(() => {
-            // Update the counter in both places
+            // Update the counter in all places
             document.querySelectorAll('#counter').forEach(elem => {
                 elem.textContent = counter;
             });
-        });
+        })
+        .catch(error => console.error('Error updating counter:', error));
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => console.error('Error fetching data:', error));
 }
 
 // Call updateCounter function on page load

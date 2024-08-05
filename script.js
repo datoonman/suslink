@@ -23,7 +23,9 @@ function updateCounter() {
         })
         .then(() => {
             // Update the counter in both places
-            document.getElementById('counter').textContent = counter;
+            document.querySelectorAll('#counter').forEach(elem => {
+                elem.textContent = counter;
+            });
         });
     })
     .catch(error => console.error('Error:', error));

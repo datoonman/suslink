@@ -1,68 +1,72 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+html, body {
+    height: 100%;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #000;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1040%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='rgba(0%2c 0%2c 0%2c 1)'%3e%3c/rect%3e%3cpath d='M227.88647097656016 796.159135747737L-51.26747351158107 683.0640346048899-19.1804517248288 944.3918558781688z' fill='rgba(63%2c 142%2c 28%2c 0.35)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1612.111%2c931.619C1648.473%2c931.577%2c1679.991%2c908.98%2c1698.375%2c877.608C1716.987%2c845.846%2c1724.474%2c805.351%2c1704.051%2c774.721C1685.088%2c746.28%2c1646.254%2c746.588%2c1612.111%2c748.232C1581.721%2c749.695%2c1551.23%2c757.597%2c1534.323%2c782.892C1515.398%2c811.205%2c1509.716%2c847.63%2c1525.5%2c877.808C1542.383%2c910.088%2c1575.682%2c931.661%2c1612.111%2c931.619' fill='rgba(63%2c 142%2c 28%2c 0.35)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M715.026%2c708.885C781.751%2c708.657%2c856.535%2c705.374%2c891.849%2c648.76C928.585%2c589.866%2c907.968%2c515.426%2c873.158%2c455.374C838.475%2c395.541%2c784.16%2c345.568%2c715.026%2c343.715C642.999%2c341.784%2c577.844%2c384.27%2c541.496%2c446.483C504.808%2c509.278%2c495.977%2c589.316%2c536.094%2c649.978C573.218%2c706.115%2c647.724%2c709.115%2c715.026%2c708.885' fill='rgba(63%2c 142%2c 28%2c 0.35)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1141.231%2c119.895C1188.014%2c117.445%2c1228.718%2c92.728%2c1254.294%2c53.479C1282.919%2c9.549%2c1304.874%2c-45.733%2c1278.8%2c-91.223C1252.637%2c-136.87%2c1193.828%2c-145.093%2c1141.231%2c-143.78C1091.466%2c-142.538%2c1042.045%2c-126.475%2c1015.064%2c-84.64C985.741%2c-39.173%2c977.21%2c20.454%2c1005.614%2c66.501C1032.951%2c110.819%2c1089.231%2c122.618%2c1141.231%2c119.895' fill='rgba(63%2c 142%2c 28%2c 0.35)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M239.564762023934 776.055297817999L380.5749915527002 657.7336662281876 132.58742940360005 505.37913772994403z' fill='rgba(63%2c 142%2c 28%2c 0.35)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1170.741%2c882.347C1207.377%2c883.174%2c1245.367%2c868.976%2c1262.551%2c836.61C1278.969%2c805.685%2c1264.679%2c769.783%2c1246.337%2c739.959C1229.097%2c711.927%2c1203.629%2c688.507%2c1170.741%2c687.326C1135.895%2c686.075%2c1102.715%2c704.067%2c1085.123%2c734.172C1067.377%2c764.541%2c1068.242%2c802.166%2c1085.84%2c832.621C1103.427%2c863.057%2c1135.598%2c881.554%2c1170.741%2c882.347' fill='rgba(63%2c 142%2c 28%2c 0.35)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1452.245%2c1416.135C1542.448%2c1410.625%2c1597.745%2c1324.752%2c1636.984%2c1243.344C1670.247%2c1174.336%2c1675.377%2c1096.284%2c1638.882%2c1028.93C1600.504%2c958.101%2c1532.581%2c908.372%2c1452.245%2c902.4C1359.727%2c895.523%2c1259.555%2c918.372%2c1210.448%2c997.083C1159.042%2c1079.478%2c1175.249%2c1184.469%2c1223.786%2c1268.586C1272.346%2c1352.744%2c1355.263%2c1422.06%2c1452.245%2c1416.135' fill='rgba(63%2c 142%2c 28%2c 0.35)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1397.042697743512 632.8236578365368L1658.5203972246643 660.3060714795315 1686.002810867659 398.8283719983793 1424.5251113865068 371.34595835538454z' fill='rgba(63%2c 142%2c 28%2c 0.35)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M121.13445084357262-146.11030458520713L-27.20590108445174-7.780688529354421 254.4586989633395 145.5650313347557z' fill='rgba(63%2c 142%2c 28%2c 0.35)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1092.584256988734 267.227238799352L1342.059896261751 111.33755776965668 1186.1702152320556-138.13808150336024 936.6945759590387 17.751599526335042z' fill='rgba(63%2c 142%2c 28%2c 0.35)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M366.4252243846057-93.70913524317226L135.5375911896334 106.99842221899476 336.2451486518004 337.88605541396714 567.1327818467728 137.17849795180007z' fill='rgba(63%2c 142%2c 28%2c 0.35)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M589.426%2c1177.747C681.839%2c1182.289%2c774.989%2c1138.669%2c818.558%2c1057.044C860.167%2c979.093%2c828.034%2c889.02%2c784.622%2c812.058C740.185%2c733.278%2c679.872%2c650.052%2c589.426%2c650.831C499.779%2c651.603%2c440.134%2c735.222%2c399.966%2c815.37C364.597%2c885.941%2c359.668%2c966.335%2c396.242%2c1036.289C435.876%2c1112.096%2c503.986%2c1173.548%2c589.426%2c1177.747' fill='rgba(63%2c 142%2c 28%2c 0.35)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M53.99 985.26 a339.53 339.53 0 1 0 679.06 0 a339.53 339.53 0 1 0 -679.06 0z' fill='rgba(63%2c 142%2c 28%2c 0.35)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M2054.6186491045623 1056.9671015211163L1934.1183422760819 773.0861685967527 1650.2374093517183 893.5864754252332 1770.7377161801987 1177.4674083495968z' fill='rgba(63%2c 142%2c 28%2c 0.35)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1040'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+    font-family: Arial, sans-serif;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    overflow: hidden; /* To ensure no scrollbars appear */
 }
 
-#press-count {
-    font-size: 24px; /* Increase the font size */
-    font-weight: bold; /* Make the text bold */
-    color: #fff; /* Change the text color to white for contrast */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow to make it stand out */
-    position: absolute; /* Position it absolutely */
-    bottom: 10px; /* Place it at the bottom */
-    right: 10px; /* Place it at the right */
-}
-
-.container {
+#mainContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 90%;
+    color: #fff;
 }
 
 h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 3em;
+    margin-bottom: 0.5em;
 }
 
-.alert {
-    background-color: #ffdddd;
-    border-left: 6px solid #f44336;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 8px;
-}
-
-.alert h2 {
-    margin: 0;
-    color: #f44336;
-}
-
-.alert p {
-    margin: 0;
-    font-size: 1.2em;
-    color: #333;
-}
-
-.info h3 {
-    color: #333;
+#stats {
     font-size: 1.5em;
-    margin-bottom: 10px;
+    margin: 0;
 }
 
-.info p {
+#convertButton {
     font-size: 1em;
-    color: #555;
-    line-height: 1.5;
-    margin-bottom: 20px;
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#convertButton:hover {
+    background-color: #f0f0f0;
+}
+
+#footer {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.8em;
+    color: black;
+}
+
+#footer a {
+    color: black;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+
+body {
+    background-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22%23ff0000%22%2F%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 100px 100px; /* Adjust size as needed */
+    animation: moveBackground 10s linear infinite; /* Adjust duration as needed */
 }

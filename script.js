@@ -29,4 +29,5 @@ function updateCounter() {
     .catch(error => console.error('Error:', error));
 }
 
-// Call updateCounter 
+// Call updateCounter function on page load
+updateCounter();
